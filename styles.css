@@ -1,0 +1,152 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.1) inset;
+  backdrop-filter: blur(15px);
+  padding: 40px;
+  width: 450px;
+  animation: slide-in 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.alert {
+  display: none;
+  background: #00ff7f;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: pulse 1s infinite alternate;
+}
+
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.inputBox {
+  position: relative;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: calc(100% - 30px); /* کاهش فضای padding */
+  padding: 15px;
+  margin: 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.4s ease;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+
+.inputBox input::placeholder,
+.inputBox textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.inputBox input:focus,
+.inputBox textarea:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4fc3f7;
+  transform: scale(1.02);
+  box-shadow: 0 0 8px #4fc3f7, inset 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: linear-gradient(135deg, #ff4b2b, #ff416c);
+  box-shadow: 0 15px 25px rgba(255, 75, 43, 0.5);
+}
+
+button:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 5px 10px rgba(255, 75, 43, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
