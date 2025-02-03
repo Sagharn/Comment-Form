@@ -73,7 +73,7 @@ form {
 
 .inputBox input,
 .inputBox textarea {
-  width: calc(100% - 30px); /* کاهش فضای padding */
+  width: calc(100% - 30px); 
   padding: 15px;
   margin: 0;
   border: 2px solid rgba(255, 255, 255, 0.3);
